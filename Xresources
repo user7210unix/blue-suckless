@@ -1,5 +1,4 @@
 ! X resource database.
-! https://github.com/owl4ce/dotfiles
 
 ! URxvt configuration.
 URxvt.font:                      URxvt.font: xft:mplus Nerd Font Mono:size=16:antialias=true
