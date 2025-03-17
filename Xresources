@@ -1,8 +1,14 @@
 ! X resource database.
-! https://github.com/user7210unix/dwm-black
+! https://github.com/owl4ce/dotfiles
 
 ! URxvt configuration.
-Rxvt.cursorBlink:                true
+URxvt.font:                       xft:mplus Nerd Font Mono:size=16:autohint=true,\
+                                  xft:Noto Color Emoji:size=16:antialias=false,\
+                                  xft:Monospace:size=16:autohint=true,\
+                                  xft:Unifont:size=16:autohint=true
+URxvt.geometry:                   84x16
+URxvt.internalBorder:             27
+URxvt.cursorBlink:                true
 URxvt.cursorUnderline:            true
 URxvt.saveLines:                  8192
 URxvt.scrollBar:                  false
@@ -13,7 +19,7 @@ URxvt.scrollWithBuffer:           false
 URxvt.urgentOnBell:               false
 URxvt.depth:                      32
 URxvt.iso14755:                   false
-URxvt.iconFile:                   /home/username/.icons/Gladient/terminal.png
+URxvt.iconFile:                   /home/user/.icons/Gladient/terminal.png
 
 ! Uncomment below if too much font spacing, and fix glyphs performance issues.
 !URxvt.letterSpace:                -1
@@ -27,11 +33,14 @@ URxvt.print-pipe:                 "cat >/dev/null"
 URxvt.keysym.Control-Shift-L:     command:\033c
 
 ! URxvt extensions.
-URxvt.perl-ext-common:            default,matcher,resize-font,tabbedex
+URxvt.perl-ext-common:            default,matcher,resize-font,tabbedex,clipboard
+
+! Clipboard extension for proper pasting.
+URxvt.keysym.Shift-Insert:        eval:paste_clipboard
+URxvt.keysym.Control-Shift-V:     eval:paste_clipboard
 
 ! Eval built-in extension.
 URxvt.keysym.Control-Shift-C:     eval:selection_to_clipboard
-URxvt.keysym.Control-Shift-V:     eval:paste_clipboard
 URxvt.keysym.Control-Up:          eval:scroll_up 1
 URxvt.keysym.Control-Down:        eval:scroll_down 1
 URxvt.keysym.Control-Home:        eval:scroll_to_top
@@ -39,7 +48,7 @@ URxvt.keysym.Control-End:         eval:scroll_to_bottom
 
 ! Matcher built-in extension.
 URxvt.keysym.Control-Shift-U:     matcher:select
-URxvt.url-launcher:               your_web_browser
+URxvt.url-launcher:               firefox
 URxvt.matcher.button:             1
 URxvt.matcher.rend.0:             Uline fg7
 
@@ -74,23 +83,16 @@ URxvt.keysym.Control-Shift-Next:  tabbedex:move_tab_right
 URxvt.keysym.Control-Shift-Prior: tabbedex:move_tab_left
 
 ! Color schemes.
-#define black0                    #ffffff
-#define black1                    #3B4252
+#define black0                    [97]#071121
 #define black2                    #434C5E
 #define black3                    #4C566A
-#define red0                      #ff5252
-#define red1                      #ff0000
-#define green0                    #66a366
-#define green1                    #44EB9F
+#define red0                      #f7768e
+#define green0                    #73daca
 #define yellow0                   #FA946E
-#define yellow1                   #FAA687
-#define blue0                     #63C5EA
-#define blue1                     #7ACBEA
-#define magenta0                  #004589
-#define magenta1                  #004589
+#define blue0                     #7aa2f7
+#define magenta0                  #CF8EF4
 #define cyan0                     #89CCF7
-#define cyan1                     #A1D5F7
-#define white0                    #000000
+#define white0                    [100]#F9F9F9
 #define white1                    #F7F7F7
 #define white2                    #F4F4F4
 
@@ -100,13 +102,6 @@ URxvt.keysym.Control-Shift-Prior: tabbedex:move_tab_left
 *.color4:                         blue0
 *.color5:                         magenta0
 *.color6:                         cyan0
-
-*.color9:                         red1
-*.color10:                        green1
-*.color11:                        yellow1
-*.color12:                        blue1
-*.color13:                        magenta1
-*.color14:                        cyan1
 
 ! Used by `terminal-set.sh`, do not change the following configuration.
 *.foreground:                     white0
@@ -119,14 +114,3 @@ URxvt.keysym.Control-Shift-Prior: tabbedex:move_tab_left
 
 *.color8:                         black3
 *.color15:                        white2
-
-!*.foreground:                     black0
-!*.background:                     white0
-!*.cursorColor:                    black0
-!*.borderColor:                    white0
-
-!*.color0:                         white1
-!*.color7:                         black2
-
-!*.color8:                         white2
-!*.color15:                        black3
